@@ -1,4 +1,4 @@
-page('/', function() {
+  page('/', function() {
   page.redirect('/what-is-vegemite');
 });
 
@@ -20,6 +20,13 @@ page('/:slug', function(context) {
   newPage.classList.add('is-active');
 
 });
+
+if(isFirstPage){
+  isFirstPage = false;
+  return;
+}
+
+newPage.querySelector("h2").focus()
 
 page({
   hashbang: true
